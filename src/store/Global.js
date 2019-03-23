@@ -1,9 +1,7 @@
-import { observable,computed } from 'mobx'
+import { observable, computed } from "mobx";
 
-class GlobalStore{
-  @observable name='globalvvvv'
-
+class GlobalStore {
+  @observable name = "globalvvvv";
 }
 
-
-export default GlobalStore
+export default GlobalStore;

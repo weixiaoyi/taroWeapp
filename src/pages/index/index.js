@@ -1,65 +1,69 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
-import { observer, inject } from '@tarojs/mobx'
+import Taro, { Component } from "@tarojs/taro";
+import { View, Button, Text } from "@tarojs/components";
+import { observer, inject } from "@tarojs/mobx";
 
-import './index.scss'
+import "./index.scss";
 
-
-@inject(({counterStore})=>({counterStore}))
+@inject(({ counterStore }) => ({ counterStore }))
 @observer
 class Index extends Component {
-
   config = {
-    navigationBarTitleText: '首页'
-  }
+    navigationBarTitleText: "首页"
+  };
 
-  componentWillMount () { }
+  componentWillMount() {}
 
-  componentWillReact () {
-  }
+  componentWillReact() {}
 
-  componentDidMount () {
-  }
+  componentDidMount() {}
 
-  componentWillUnmount () { }
+  componentWillUnmount() {}
 
-  componentDidShow () { }
+  componentDidShow() {}
 
-  componentDidHide () { }
+  componentDidHide() {}
 
   increment = () => {
-    const { counterStore:{dispatch} } = this.props
+    const {
+      counterStore: { dispatch }
+    } = this.props;
     dispatch({
-      type:'increment',
-    })
+      type: "increment"
+    });
     // counterStore.increment()
-  }
+  };
 
   decrement = () => {
-    const { counterStore:{dispatch} } = this.props
+    const {
+      counterStore: { dispatch }
+    } = this.props;
     dispatch({
-      type:'decrement',
-    })
-  }
+      type: "decrement"
+    });
+  };
 
   incrementAsync = () => {
-    const { counterStore:{dispatch} } = this.props
+    const {
+      counterStore: { dispatch }
+    } = this.props;
     dispatch({
-      type:'incrementAsync',
-    })
-  }
+      type: "incrementAsync"
+    });
+  };
 
-  render () {
-    const { counterStore: { counter } } = this.props
+  render() {
+    const {
+      counterStore: { counter }
+    } = this.props;
     return (
-      <View className='index'>
+      <View className="index">
         <Button onClick={this.increment}>+</Button>
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Adddddaaa Async</Button>
         <Text>{counter}</Text>
       </View>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;
