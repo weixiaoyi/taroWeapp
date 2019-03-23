@@ -1,7 +1,6 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, Button, Text } from "@tarojs/components";
 import { observer, inject } from "@tarojs/mobx";
-
 import "./index.scss";
 
 @inject(({ counterStore }) => ({ counterStore }))
@@ -57,7 +56,13 @@ class Index extends Component {
     } = this.props;
     return (
       <View className="index">
-        <Button onClick={this.increment}>+</Button>
+        <Button
+          onClick={() => {
+            this.increment();
+          }}
+        >
+          +
+        </Button>
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Adddddaaa Async</Button>
         <Text>{counter}</Text>

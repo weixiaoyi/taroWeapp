@@ -1,0 +1,11 @@
+{
+  "extends": ["taro"],
+  "rules": {
+    "jsx-quotes": "off",
+    // "no-unused-vars": ["error", { "varsIgnorePattern": "Taro" }],
+    "no-unused-vars": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".tsx"] }]
+  },
+  "parser": "babel-eslint",
+  "plugins": ["typescript"]
+}
