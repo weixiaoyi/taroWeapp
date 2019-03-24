@@ -1,5 +1,5 @@
-import { observable, computed, action } from "mobx";
-import _ from "lodash";
+import { observable, computed, action } from 'mobx';
+import _ from 'lodash';
 
 class StoreExtend {
   constructor(globalStore) {

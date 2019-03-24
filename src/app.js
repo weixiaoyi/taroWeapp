@@ -1,29 +1,27 @@
-import Taro, { Component } from "@tarojs/taro";
-import { Provider } from "@tarojs/mobx";
-import { configure } from "mobx";
-import Index from "./pages/index";
+import Taro, { Component } from '@tarojs/taro';
+import { Provider } from '@tarojs/mobx';
+import { configure } from 'mobx';
+import Index from './pages/index';
 
-import store from "./store";
+import store from './store';
 
-import "./app.scss";
+import './app.scss';
 
 // 不允许在动作外部修改状态
-configure({ enforceActions: "always" });
+configure({ enforceActions: 'always' });
 
 class App extends Component {
   config = {
-    pages: ["pages/index/index"],
+    pages: ['pages/index/index'],
     window: {
-      backgroundTextStyle: "light",
-      navigationBarBackgroundColor: "#fff",
-      navigationBarTitleText: "WeChat",
-      navigationBarTextStyle: "black"
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
     }
   };
 
-  componentDidMount() {
-    // console.log(store.countStore,'--store')
-  }
+  componentDidMount() {}
 
   componentDidShow() {}
 
@@ -42,4 +40,4 @@ class App extends Component {
   }
 }
 
-Taro.render(<App />, document.getElementById("app"));
+Taro.render(<App />, document.getElementById('app'));

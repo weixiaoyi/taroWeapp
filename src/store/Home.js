@@ -1,5 +1,5 @@
-import { observable } from "mobx";
-import StoreExtend from "./StoreExtend";
+import { observable } from 'mobx';
+import StoreExtend from './StoreExtend';
 
 class HomeStore extends StoreExtend {
   @observable counter1 = 0;
@@ -8,14 +8,14 @@ class HomeStore extends StoreExtend {
   };
 
   increment = () => {
-    this.changeModel("counter1", this.counter1 + 1);
+    this.changeModel('counter1', this.counter1 + 1);
   };
   decrement = () => {
-    this.changeModel("counter1", this.counter1 - 1);
+    this.changeModel('counter1', this.counter1 - 1);
   };
   incrementAsync = () => {
     setTimeout(() => {
-      this.changeModel("counter1", this.counter1 + 1);
+      this.changeModel('counter1', this.counter1 + 1);
     }, 1000);
   };
 }

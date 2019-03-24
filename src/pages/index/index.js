@@ -1,13 +1,14 @@
-import Taro, { Component } from "@tarojs/taro";
-import { View, Button, Text } from "@tarojs/components";
-import { observer, inject } from "@tarojs/mobx";
-import "./index.scss";
+import Taro, { Component } from '@tarojs/taro';
+import { View, Button, Text } from '@tarojs/components';
+import { observer, inject } from '@tarojs/mobx';
+import Me from './Me';
+import './index.scss';
 
 @inject(({ counterStore }) => ({ counterStore }))
 @observer
 class Index extends Component {
   config = {
-    navigationBarTitleText: "首页"
+    navigationBarTitleText: '首页'
   };
 
   componentWillMount() {}
@@ -18,7 +19,9 @@ class Index extends Component {
 
   componentWillUnmount() {}
 
-  componentDidShow() {}
+  componentDidShow() {
+    //  console.log(this.$router.params, "---this.$router.params");
+  }
 
   componentDidHide() {}
 
@@ -27,7 +30,7 @@ class Index extends Component {
       counterStore: { dispatch }
     } = this.props;
     dispatch({
-      type: "increment"
+      type: 'increment'
     });
     // counterStore.increment()
   };
@@ -37,7 +40,7 @@ class Index extends Component {
       counterStore: { dispatch }
     } = this.props;
     dispatch({
-      type: "decrement"
+      type: 'decrement'
     });
   };
 
@@ -46,7 +49,7 @@ class Index extends Component {
       counterStore: { dispatch }
     } = this.props;
     dispatch({
-      type: "incrementAsync"
+      type: 'incrementAsync'
     });
   };
 
@@ -55,7 +58,7 @@ class Index extends Component {
       counterStore: { counter }
     } = this.props;
     return (
-      <View className="index">
+      <View className='index'>
         <Button
           onClick={() => {
             this.increment();
@@ -66,6 +69,11 @@ class Index extends Component {
         <Button onClick={this.decrement}>-</Button>
         <Button onClick={this.incrementAsync}>Adddddaaa Async</Button>
         <Text>{counter}</Text>
+        <Me
+          handlerMe={() => {
+            console.log('ggg');
+          }}
+        />
       </View>
     );
   }

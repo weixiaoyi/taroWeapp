@@ -1,7 +1,7 @@
-import CounterStore from "./Counter";
-import HomeStore from "./Home";
-import GlobalStore from "./Global";
-import StoreExtend from "./StoreExtend";
+import CounterStore from './Counter';
+import HomeStore from './Home';
+import GlobalStore from './Global';
+import StoreExtend from './StoreExtend';
 
 class Store {
   constructor() {
