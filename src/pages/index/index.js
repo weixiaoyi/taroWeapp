@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
 import { observer, inject } from '@tarojs/mobx';
 import Me from './Me';
-import './index.scss';
+import styles from './index.module.scss';
 
 @inject(({ counterStore }) => ({ counterStore }))
 @observer
@@ -58,7 +58,7 @@ class Index extends Component {
       counterStore: { counter }
     } = this.props;
     return (
-      <View className='index'>
+      <View className={styles.index}>
         <Button
           onClick={() => {
             this.increment();

@@ -2,6 +2,9 @@ import { observable, computed } from 'mobx';
 import StoreExtend from './StoreExtend';
 
 class CounterStore extends StoreExtend {
+  constructor(props) {
+    super(props);
+  }
   @observable counter = 1;
 
   increment = () => {
