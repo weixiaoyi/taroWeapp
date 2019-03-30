@@ -6,6 +6,11 @@ class GlobalStore extends StoreExtend {
     super(props);
   }
   @observable name = 'globalvvvv';
+  @observable userInfo = {};
+
+  updateUserInfo = ({ userInfo }) => {
+    this.changeModel('userInfo', userInfo);
+  };
 }
 
 export default GlobalStore;

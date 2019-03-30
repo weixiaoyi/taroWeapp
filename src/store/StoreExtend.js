@@ -11,7 +11,12 @@ class StoreExtend {
 
   dispatch = (obj = {}) => {
     const { type, payload = {} } = obj;
-    this[type](payload);
+    if (this[type]) {
+      this[type](payload);
+      return Promise.resolve();
+    } else {
+      return Promise.reject('dispatch的type方法必须存在');
+    }
   };
 
   @action
