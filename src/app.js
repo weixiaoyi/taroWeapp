@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro';
 import '@tarojs/async-await';
 import { Provider } from '@tarojs/mobx';
 import { configure } from 'mobx';
-import Index from './pages/index';
+import Login from './pages/login/login';
 
 import store from './store';
 
@@ -13,7 +13,7 @@ configure({ enforceActions: 'always' });
 
 class App extends Component {
   config = {
-    pages: ['pages/index/index'],
+    pages: ['pages/login/login'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Index />
+        <Login />
       </Provider>
     );
   }
