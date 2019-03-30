@@ -10,6 +10,9 @@ import './app.scss';
 
 // 不允许在动作外部修改状态
 configure({ enforceActions: 'always' });
+Taro.cloud.init({
+  traceUser: true
+});
 
 class App extends Component {
   config = {

@@ -55,12 +55,6 @@ class _MixinA extends MixinBase {
       await this._doLogin();
     } finally {
       await this._getUserInfo();
-      Taro.cloud
-        .callFunction({
-          name: 'main',
-          data: {}
-        })
-        .then(res => console.log(res));
       super.componentDidMount();
     }
   }

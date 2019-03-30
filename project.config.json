@@ -1,11 +1,11 @@
 {
 	"miniprogramRoot": "dist/",
-  "cloudfunctionRoot": "cloud/functions/",
-  "projectname": "WeappTaro",
+	"cloudfunctionRoot": "clound/functions/",
+	"projectname": "WeappTaro",
 	"description": "",
 	"appid": "wx036c1152bb3254cf",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": false,
 		"minified": false,
