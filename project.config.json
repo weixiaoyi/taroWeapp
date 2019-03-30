@@ -1,6 +1,7 @@
 {
 	"miniprogramRoot": "dist/",
-	"projectname": "WeappTaro",
+  "cloudfunctionRoot": "cloud/functions/",
+  "projectname": "WeappTaro",
 	"description": "",
 	"appid": "wx036c1152bb3254cf",
 	"setting": {
