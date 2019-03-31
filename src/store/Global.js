@@ -5,7 +5,7 @@ class GlobalStore extends StoreExtend {
   constructor(props) {
     super(props);
   }
-  @observable name = 'globalvvvv';
+
   @observable userInfo = {};
 
   updateUserInfo = ({ userInfo }) => {

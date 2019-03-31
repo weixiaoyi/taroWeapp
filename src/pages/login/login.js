@@ -1,7 +1,6 @@
-import Taro from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
 import { MixinA } from '../../components';
-import { Inject, toJS } from '../../utils';
+import { Inject } from '../../utils';
 import styles from './login.module.scss';
 
 @Inject(({ globalStore }) => ({ globalStore }))
@@ -13,13 +12,6 @@ class Login extends MixinA {
     const {
       globalStore: { userInfo: { nickName } = {} }
     } = this.props;
-    Taro.cloud
-      .callFunction({
-        name: 'main',
-        data: {}
-      })
-      .then(res => console.log(res))
-      .catch(err => console.log(er));
   };
 
   render() {

@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro';
 import '@tarojs/async-await';
 import { Provider } from '@tarojs/mobx';
 import { configure } from 'mobx';
+import Home from './pages/home/home';
 import Login from './pages/login/login';
 
 import store from './store';
@@ -9,14 +10,11 @@ import store from './store';
 import './app.scss';
 
 // 不允许在动作外部修改状态
-configure({ enforceActions: 'always' });
-Taro.cloud.init({
-  traceUser: true
-});
+// configure({ enforceActions: 'always' });
 
 class App extends Component {
   config = {
-    pages: ['pages/login/login'],
+    pages: ['pages/home/home', 'pages/login/login'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -25,19 +23,12 @@ class App extends Component {
     }
   };
 
-  componentDidMount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  componentDidCatchError() {}
-
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
   render() {
     return (
       <Provider store={store}>
+        <Home />
         <Login />
       </Provider>
     );

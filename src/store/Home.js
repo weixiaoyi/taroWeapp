@@ -1,25 +1,27 @@
-import { observable } from 'mobx';
+import Taro from '@tarojs/taro';
+import { observable, action } from 'mobx';
 import StoreExtend from './StoreExtend';
+import { getArticles } from '../service';
 
 class HomeStore extends StoreExtend {
   constructor(props) {
     super(props);
   }
-  @observable counter1 = 0;
-  counterStore = () => {
-    this.counter1++;
-  };
 
-  increment = () => {
-    this.changeModel('counter1', this.counter1 + 1);
-  };
-  decrement = () => {
-    this.changeModel('counter1', this.counter1 - 1);
-  };
-  incrementAsync = () => {
-    setTimeout(() => {
-      this.changeModel('counter1', this.counter1 + 1);
-    }, 1000);
+  @observable userArticles = [];
+
+  updateArticles = async ({ action }) => {
+    const userInfo = this.getUserInfo();
+    let res = [];
+    switch (action) {
+      case 'get':
+        res = await getArticles();
+    }
+    if (res.data) {
+      const data = res.data;
+      this.changeModel('userArticles', data);
+      return data;
+    }
   };
 }
 
