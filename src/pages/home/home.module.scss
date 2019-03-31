@@ -1,21 +1,34 @@
 .home{
-  .article+.article{
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  .desc{
+    height:60px;
+    background: red;
+    width:100%;
   }
-  .article{
-    border-radius: 5px;
-    background: #f3f3f3;
-    margin:0 20px;
-    padding:10px 20px;
-    .title{
-      color:red;
-      text-align: center;
+  .content{
+    top:80px;
+    bottom:80px;
+    background: blue;
+    .article+.article{
+      margin-top: 40px;
+    }
+    .article{
+      border-radius: 5px;
+      background: #f3f3f3;
+      margin:0 20px;
+      padding:10px 20px;
+      .title{
+        color:red;
+        text-align: center;
+      }
     }
   }
-
   .addarticle{
+    height:60px;
     position: fixed;
+    width:100%;
     bottom:0;
   }
-
 }

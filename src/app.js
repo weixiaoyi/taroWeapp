@@ -16,7 +16,7 @@ class App extends Component {
   config = {
     pages: ['pages/home/home', 'pages/login/login'],
     window: {
-      enablePullDownRefresh: true,
+      // enablePullDownRefresh: true,
       backgroundColor: '#A7EDFF',
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

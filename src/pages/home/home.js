@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
-import { MixinA } from '../../components';
+import { MixinA, Scroller } from '../../components';
 import styles from './home.module.scss';
 import { Inject } from '../../utils';
 
@@ -25,14 +25,18 @@ class Home extends MixinA {
     } = this.props;
     return (
       <View className={styles.home}>
-        {userArticles.map((item, index) => {
-          return (
-            <View key={index} className={styles.article}>
-              <View className={styles.title}>{item.title}</View>
-              <View>{item.content}</View>
-            </View>
-          );
-        })}
+        <View className={styles.desc}>所有文章</View>
+        <Scroller my-class={styles.content}>
+          {userArticles.map((item, index) => {
+            return (
+              <View key={index} className={styles.article}>
+                <View className={styles.title}>{item.title}</View>
+                <View>{item.content}</View>
+              </View>
+            );
+          })}
+        </Scroller>
+
         <Button
           className={styles.addarticle}
           onClick={() => {
