@@ -1,11 +1,18 @@
 const cloud = require('wx-server-sdk');
-cloud.init();
+const userArticles = require('./userArticles');
+cloud.init({
+  env: 'test-cc74d8',
+  traceUser: true
+});
+const db = cloud.database();
 
-exports.main = async () => {
+exports.main = async event => {
   const wxContext = cloud.getWXContext();
-  return {
-    openid: wxContext.OPENID,
-    appid: wxContext.APPID,
-    unionid: wxContext.UNIONID
-  };
+  const { OPENID: _openid } = wxContext;
+  const params = { event, _openid, db };
+  switch (event.method) {
+    case 'getUserArticles': {
+      return await userArticles.getUserArticles(params);
+    }
+  }
 };

@@ -15,7 +15,7 @@ class Home extends MixinA {
     } = this.props;
     dispatch({
       type: 'updateArticles',
-      payload: { action: 'get' }
+      payload: { action: 'get', page: 1 }
     });
   };
 
@@ -23,8 +23,6 @@ class Home extends MixinA {
     const {
       model: { userArticles }
     } = this.props;
-
-    console.log(JSON.stringify(userArticles), userArticles);
     return (
       <View className={styles.home}>
         {userArticles.map((item, index) => {
