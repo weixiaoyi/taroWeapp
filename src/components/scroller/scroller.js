@@ -15,7 +15,7 @@ class Scroller extends Component {
         style={style}
         lowerThreshold='20'
         upperThreshold='20'
-        onScrollToLower={console.log}
+        onScrollToLower={e => console.log(e)}
       >
         {this.props.children}
       </ScrollView>
