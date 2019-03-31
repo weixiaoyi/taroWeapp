@@ -1,6 +1,7 @@
+import Taro from '@tarojs/taro';
 import { observable, action } from 'mobx';
 import StoreExtend from './StoreExtend';
-import { getUserArticles } from '../service';
+import { getUserArticles, addUserArticle } from '../service';
 import { resOk } from '../utils';
 
 class HomeStore extends StoreExtend {
@@ -8,19 +9,33 @@ class HomeStore extends StoreExtend {
     super(props);
   }
 
+  @observable userArticlesPage = 1;
   @observable userArticles = [];
 
-  updateArticles = async ({ action, page, pageSize = 10 }) => {
-    let res = [];
-    switch (action) {
-      case 'get':
-        res = await getUserArticles({ page, pageSize });
-    }
+  reload = () => {
+    this.getUserArticles();
+  };
+
+  getUserArticles = async () => {
+    const res = await getUserArticles({
+      page: this.userArticlesPage,
+      pageSize: 10
+    });
     if (resOk(res)) {
       const data = res.result.data;
       console.log(res, '---data');
       this.changeModel('userArticles', data);
       return data;
+    }
+  };
+
+  addUserArticle = async ({ title, content }) => {
+    const res = await addUserArticle({
+      title,
+      content
+    });
+    if (resOk(res)) {
+      this.reload();
     }
   };
 }

@@ -1,3 +1,21 @@
 .home{
-  color:red;
+  .article+.article{
+    margin-top: 40px;
+  }
+  .article{
+    border-radius: 5px;
+    background: #f3f3f3;
+    margin:0 20px;
+    padding:10px 20px;
+    .title{
+      color:red;
+      text-align: center;
+    }
+  }
+
+  .addarticle{
+    position: fixed;
+    bottom:0;
+  }
+
 }

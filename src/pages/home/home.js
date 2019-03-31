@@ -1,3 +1,4 @@
+import Taro from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
 import { MixinA } from '../../components';
 import styles from './home.module.scss';
@@ -14,20 +15,35 @@ class Home extends MixinA {
       model: { dispatch }
     } = this.props;
     dispatch({
-      type: 'updateArticles',
-      payload: { action: 'get', page: 1 }
+      type: 'getUserArticles'
     });
   };
 
   render() {
     const {
-      model: { userArticles }
+      model: { userArticles, dispatch }
     } = this.props;
     return (
       <View className={styles.home}>
         {userArticles.map((item, index) => {
-          return <Text key={index}>{item.title}</Text>;
+          return (
+            <View key={index} className={styles.article}>
+              <View className={styles.title}>{item.title}</View>
+              <View>{item.content}</View>
+            </View>
+          );
         })}
+        <Button
+          className={styles.addarticle}
+          onClick={() => {
+            dispatch({
+              type: 'addUserArticle',
+              payload: { title: '文章' + Date.now(), content: 'hahahah' }
+            });
+          }}
+        >
+          新增文章
+        </Button>
       </View>
     );
   }

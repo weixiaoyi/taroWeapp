@@ -14,5 +14,9 @@ exports.main = async event => {
     case 'getUserArticles': {
       return await userArticles.getUserArticles(params);
     }
+
+    case 'addUserArticle': {
+      return await userArticles.addUserArticle(params);
+    }
   }
 };

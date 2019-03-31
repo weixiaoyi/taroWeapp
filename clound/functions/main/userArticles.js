@@ -21,6 +21,22 @@ const getUserArticles = async ({ event, _openid, db }) => {
   };
 };
 
+const addUserArticle = async ({ event, _openid, db }) => {
+  const { title, content } = event;
+  const res = await db.collection('articles').add({
+    data: {
+      _openid,
+      title,
+      content,
+      createTime: db.serverDate()
+    }
+  });
+  return {
+    data: res._id
+  };
+};
+
 module.exports = {
-  getUserArticles
+  getUserArticles,
+  addUserArticle
 };

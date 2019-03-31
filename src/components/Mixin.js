@@ -15,9 +15,7 @@ class MixinBase extends Component {
   }
 
   componentDidMount() {
-    if (_.isFunction(this.startInit)) {
-      this.startInit();
-    }
+    this._startInit();
   }
 
   componentWillUnmount() {
@@ -31,6 +29,15 @@ class MixinBase extends Component {
   componentDidCatch(err) {
     Taro.showToast(err);
   }
+
+  onPullDownRefresh = () => {
+    this._startInit();
+  };
+  _startInit = () => {
+    if (_.isFunction(this.startInit)) {
+      this.startInit();
+    }
+  };
 
   _timeOutPromise = (body, timeOut = 2000) =>
     new Promise(resolve => {
