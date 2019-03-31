@@ -1,2 +1,1 @@
-export { MixinA } from './Mixin';
-export { default as Scroller } from './scroller/scroller';
+export { Scroller } from './scroller/scroller';

@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { observer, inject } from '@tarojs/mobx';
-import { _ } from '../utils';
+import { _ } from '../../utils';
 
 class MixinBase extends Component {
   constructor(props) {

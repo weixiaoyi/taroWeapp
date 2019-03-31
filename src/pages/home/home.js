@@ -1,6 +1,7 @@
-import Taro from '@tarojs/taro';
+import Taro, { Component } from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
-import { MixinA, Scroller } from '../../components';
+import { MixinA } from '../../components/mixin/mixin';
+import { Scroller } from '../../components';
 import styles from './home.module.scss';
 import { Inject } from '../../utils';
 
@@ -26,6 +27,7 @@ class Home extends MixinA {
     return (
       <View className={styles.home}>
         <View className={styles.desc}>所有文章</View>
+
         <Scroller my-class={styles.content}>
           {userArticles.map((item, index) => {
             return (
