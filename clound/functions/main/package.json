@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mobx": "^5.9.4",
     "wx-server-sdk": "latest"
   }
 }
