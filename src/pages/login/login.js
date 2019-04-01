@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
-import { MixinA } from '../../components/mixin/mixin';
+import MixinA from '../../components/mixin/mixin';
 import { Inject } from '../../utils';
 import styles from './login.module.scss';
 

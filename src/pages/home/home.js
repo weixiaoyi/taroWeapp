@@ -1,7 +1,8 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Button, Text } from '@tarojs/components';
-import { MixinA } from '../../components/mixin/mixin';
+import MixinA from '../../components/mixin/mixin';
 import { Scroller } from '../../components';
+
 import styles from './home.module.scss';
 import { Inject } from '../../utils';
 

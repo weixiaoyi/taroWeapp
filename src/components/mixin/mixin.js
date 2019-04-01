@@ -47,7 +47,7 @@ class MixinBase extends Component {
     });
 }
 
-class _MixinA extends MixinBase {
+export default class MixinA extends MixinBase {
   constructor(props) {
     super(props);
     if (!props.globalStore) {
@@ -100,5 +100,3 @@ class _MixinA extends MixinBase {
     }
   };
 }
-
-export const MixinA = _MixinA;
